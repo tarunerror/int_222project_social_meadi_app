@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer base {
+  * {
+    @apply p-0 m-0 box-border;
+  }
+
+  body {
+    @apply text-gray-500;
+    scroll-behavior: smooth;
+    min-width: 320px;
+    max-width: 480px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+/* Styles for mobile screens */
+@media (min-width: 320px) and (max-width: 480px) {
+  .w-full {
+    min-width: 320px;
+    max-width: 480px;
+  }
+}
+.masonry-grid {
+  column-count: 2; /* Set the number of columns you want */
+  column-gap: 2px; /* Set the gap between columns */
+}
+
+.masonry-grid div {
+  break-inside: avoid; /* Prevent images from breaking across columns */
+}
